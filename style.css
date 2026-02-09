@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: linear-gradient(#fff1d6,#f7d9b5);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+/* Animated text */
+.animated-text {
+  font-size: 3rem;
+  color: #ff69b4;
+  animation: bounce 2s infinite alternate, sparkle 3s infinite;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-20px); }
+}
+
+@keyframes sparkle {
+  0%,100% { text-shadow: 0 0 5px #fff,0 0 10px #ff69b4,0 0 20px #ff69b4; }
+  50% { text-shadow: 0 0 10px #fff,0 0 20px #ff1493,0 0 30px #ff1493; }
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  background: #ff69b4;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,.3);
+  transition: transform .2s;
+}
+button:hover { transform: scale(1.1); }
+
+.wishes p {
+  font-size: 22px;
+  margin: 10px 0;
+  color: #8a5a3b;
+  display: none;
+}
+
+.love-message {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-top: 20px;
+  animation: bounce 2s infinite alternate, sparkle 3s infinite;
+}
+
+/* Floating emojis */
+.floating-chocolates div, .floating-hearts div, .chocolate-hearts div {
+  position: fixed;
+  z-index: 9999;
+  font-size: 24px;
+  opacity: 0.8;
+  animation: floatUp 7s linear forwards;
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
